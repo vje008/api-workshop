@@ -3,7 +3,11 @@ import { Table, Thead, Tbody, Tr, Th, Td, Spinner } from "@chakra-ui/react";
 import { Tilsyn } from "./types";
 import { mapSmilefjesToEmoji } from "./utils";
 
-export const TilsynList = () => {
+type TilsynListProps = {
+  onShowTilsynDetails: (tilsynId: string) => void;
+};
+
+export const TilsynList = (props: TilsynListProps) => {
   const [tilsyn, setTilsyn] = React.useState<Tilsyn[]>();
 
   React.useEffect(() => {
@@ -31,7 +35,11 @@ export const TilsynList = () => {
         <Tbody>
           {tilsyn &&
             tilsyn.map((item) => (
-              <Tr>
+              <Tr
+                onClick={() => {
+                  props.onShowTilsynDetails(item.tilsynsId);
+                }}
+              >
                 <Td>{item.navn}</Td>
                 <Td>{item.poststed}</Td>
                 <Td>{item.postnummer}</Td>
