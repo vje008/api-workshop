@@ -9,7 +9,7 @@ export const TilsynList = () => {
   React.useEffect(() => {
     const fetchTilsyn = async () => {
       const response = await fetch("https://smilefjes.herokuapp.com/tilsyn");
-      const tilsyn: Tilsyn = await response.json();
+      const tilsyn = await response.json();
       setTilsyn(tilsyn);
     };
     fetchTilsyn();
