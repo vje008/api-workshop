@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Table, Thead, Tbody, Tr, Th, Td, Spinner } from "@chakra-ui/react";
 import { Tilsyn } from "./types";
 import { mapSmilefjesToEmoji } from "./utils";
@@ -9,7 +9,7 @@ export const TilsynList = () => {
   React.useEffect(() => {
     const fetchTilsyn = async () => {
       const response = await fetch("https://smilefjes.herokuapp.com/tilsyn");
-      const tilsyn = await response.json();
+      const tilsyn: Tilsyn = await response.json();
       setTilsyn(tilsyn);
     };
     fetchTilsyn();
