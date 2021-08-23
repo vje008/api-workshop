@@ -2,7 +2,7 @@ import React from "react";
 import { Table, Thead, Tbody, Tr, Th, Td, Spinner } from "@chakra-ui/react";
 import { QueryParams, Tilsyn } from "./types";
 import { mapSmilefjesToEmoji } from "./utils";
-import { fetchTilsynList } from "./api";
+import { fetchTilsynList } from "./oppgave1";
 
 type TilsynListProps = {
   onShowTilsynDetails: (tilsynId: string) => void;

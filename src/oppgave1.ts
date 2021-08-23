@@ -25,7 +25,3 @@ export function fetchTilsynList(queryParams?: QueryParams): Promise<Response> {
     `https://smilefjes.herokuapp.com/tilsyn${getQueryParams(queryParams)}`
   );
 }
-
-export function fetchTilsynDetails(tilsynId: string): Promise<Response> {
-  return fetch(`https://smilefjes.herokuapp.com/tilsyn/${tilsynId}`);
-}

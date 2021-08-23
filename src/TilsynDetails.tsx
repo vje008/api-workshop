@@ -2,7 +2,7 @@ import React from "react";
 import { Spinner, SimpleGrid, Box, Text, Button } from "@chakra-ui/react";
 import { TilsynDetailsType } from "./types";
 import { mapSmilefjesToEmoji } from "./utils";
-import { fetchTilsynDetails } from "./api";
+import { fetchTilsynDetails } from "./oppgave2";
 
 type TilsynDetailsProps = {
   tilsynId: string;
