@@ -58,6 +58,17 @@ const url = "https://smilefjes.herokuapp.com/tilsyn";
 
 Når du har fått løst oppgaven skal appen vise en liste med tilsyn. Dette er fint, men vi vil gjerne kun hente dataen vi faktisk har lyst på. Dette skal vi se videre på i oppgave 2.
 
+<details><summary>🧠 Dypdykk</summary>
+Om du så litt etter la du merke til at vi brukte fetch til å hente data. Om du har lyst til å lage flere webapplikasjoner som henter data fra web kommer du garantert til å ha nytte av å kunne mer om dette. MDN har en fin guide [her](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
+
+```ts
+fetch("http://example.com/movies.json")
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+```
+
+</details>
+
 ### Oppgave 2
 
 ### Oppgave 3
