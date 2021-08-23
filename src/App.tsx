@@ -9,13 +9,14 @@ export const App = () => {
   const [showTilsynSearch, setShowTilsynSearch] = React.useState(true);
   const [showTilsynList, setShowTilsynList] = React.useState(false);
   const [selectedTilsyn, setSelectedTilsyn] = React.useState<string>();
-  const [shouldRefetchTilsyn, setShouldRefetchTilsyn] =
+  const [shouldFetchTilsyn, setShouldFetchTilsyn] =
     React.useState<boolean>(false);
   const [queryParams, setQueryParams] = React.useState<QueryParams>();
 
   function handleOnFetchTilsyn(queryParams: QueryParams) {
     setShowTilsynList(true);
     setQueryParams(queryParams);
+    setShouldFetchTilsyn(true);
   }
 
   function clear() {
@@ -23,6 +24,7 @@ export const App = () => {
     setShowTilsynList(false);
     setSelectedTilsyn(undefined);
     setQueryParams(undefined);
+    setShouldFetchTilsyn(false);
   }
 
   return (
@@ -41,6 +43,8 @@ export const App = () => {
                 setSelectedTilsyn(tilsynId);
               }}
               queryParams={queryParams}
+              shouldFetchTilsyn={shouldFetchTilsyn}
+              onFetchedTilsyn={() => setShouldFetchTilsyn(false)}
             />
           )}
           {selectedTilsyn && (

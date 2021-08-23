@@ -7,11 +7,15 @@ import { fetchTilsynList } from "./api";
 type TilsynListProps = {
   onShowTilsynDetails: (tilsynId: string) => void;
   queryParams?: QueryParams;
+  shouldFetchTilsyn: boolean;
+  onFetchedTilsyn: () => void;
 };
 
 export const TilsynList = ({
   onShowTilsynDetails,
   queryParams,
+  shouldFetchTilsyn,
+  onFetchedTilsyn,
 }: TilsynListProps) => {
   const [tilsyn, setTilsyn] = React.useState<Tilsyn[]>();
 
@@ -20,9 +24,10 @@ export const TilsynList = ({
       const response = await fetchTilsynList(queryParams);
       const tilsyn = await response.json();
       setTilsyn(tilsyn);
+      onFetchedTilsyn();
     };
     fetchTilsyn();
-  }, []);
+  }, [shouldFetchTilsyn]);
 
   if (tilsyn) {
     return (
