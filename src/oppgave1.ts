@@ -8,7 +8,7 @@
  * Om du fant riktig url kommer applikasjonen til å vise frem en liste med tilbud når du trykker på knappen "Hent tilsyn"
  */
 export function fetchTilsynList(): Promise<Response> {
-  const url = "HELE DENNE TEKSTEN SKAL BYTTES UT";
+  const url = "https://smilefjes.herokuapp.com/tilsyn";
 
   return fetch(url);
 }

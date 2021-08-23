@@ -3,6 +3,10 @@ import { Table, Thead, Tbody, Tr, Th, Td, Spinner } from "@chakra-ui/react";
 import { QueryParams, Tilsyn } from "./types";
 import { mapSmilefjesToEmoji } from "./utils";
 import { fetchTilsynList } from "./oppgave1";
+import {
+  shouldUseInputFields,
+  fetchTilsynListWithQueryParams,
+} from "./oppgave2";
 
 type TilsynListProps = {
   onShowTilsynDetails: (tilsynId: string) => void;
@@ -20,13 +24,23 @@ export const TilsynList = ({
   const [tilsyn, setTilsyn] = React.useState<Tilsyn[]>();
 
   React.useEffect(() => {
-    const fetchTilsyn = async () => {
-      const response = await fetchTilsynList(queryParams);
-      const tilsyn = await response.json();
-      setTilsyn(tilsyn);
-      onFetchedTilsyn();
-    };
-    fetchTilsyn();
+    if (shouldUseInputFields) {
+      const fetchTilsyn = async () => {
+        const response = await fetchTilsynListWithQueryParams(queryParams);
+        const tilsyn = await response.json();
+        setTilsyn(tilsyn);
+        onFetchedTilsyn();
+      };
+      fetchTilsyn();
+    } else {
+      const fetchTilsyn = async () => {
+        const response = await fetchTilsynList();
+        const tilsyn = await response.json();
+        setTilsyn(tilsyn);
+        onFetchedTilsyn();
+      };
+      fetchTilsyn();
+    }
   }, [shouldFetchTilsyn]);
 
   if (tilsyn) {

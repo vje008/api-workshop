@@ -71,9 +71,59 @@ fetch("http://example.com/movies.json")
 
 ### Oppgave 2
 
+Finn filen `oppgave2.ts`. Her skal vi gjøre applikasjonen i stand til å hente ut kun de tilsynene vi har lyst på ved å bruke query params.
+
+<details><summary>💡 Tips</summary>
+
+#### Query Params
+
+Husk at queryparams legges til på slutten av url'en på følgende format `?variabel1=verdiPåVariabel1&variabel2=verdiPåvariabel2`.
+
+En hel url på da seende ut som dette.
+
+```ts
+"http://example.com/movies?year=2021&genre=thriller";
+```
+
+#### String/tekststreng i javascript
+
+Det finnes mange måter å håndtere tekststrenger med variabler i javascript. Den letteste er kanskje å bare plusse alle de ulike strengene sammen på denne måten:
+
+```js
+const year = "2021";
+const genre = "thriller";
+
+const url =
+  "http://example.com/movies?" + "year=" + year + "&" + "genre=" + genre;
+```
+
+Men javascript har også noe som heter Template literals. Dette pleier ofte å bli ganske mye lettere å lese når det blir flere variabler. Her er akkurat samme tekststreng ved bruk Template literals. Legg merke til bruk av back tics `
+
+```js
+const year = "2021";
+const genre = "thriller";
+
+const url = `http://example.com/movies?year=${year}&genre=${genre}`;
+```
+
+</details>
+
+<details><summary>🚨Løsningsforslag</summary>
+Bytt ut innholdet i url-variablen til dette.
+
+```ts
+const url = `https://smilefjes.herokuapp.com/tilsyn?postnummer=${postnummer}&poststed=${poststed}&smilefjes=${smilefjes}`;
+```
+
+</details>
+
+<details><summary>🧠 Dypdykk</summary>
+Du kan gjøre ganske mye kult med Template literals. Ta en titt [her](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) for meg eksempler.
+</details>
+
 ### Oppgave 3
 
-Dette er fint, men for å gjøre applikasjonen enda bedre vil vi også hente detaljer om hvert tilsyn. Finn filen `oppgave2.ts` for å løse dette.
+Nå har vi gjort applikasjonen i stand til ikke bare hente tilsyn, men også hente de tilsynene vi har lyst på basert på query parameterne vi sender inn. Nå skal vi se på hvordan vi kan gå frem får å hente ut detaljer om et tilsyn. Finn filen `oppgave3.ts` for å løse dette.
 
 ### Konklusjon
 
