@@ -19,6 +19,7 @@ export type TilsynDetailsType = {
   mathåndteringOgTilberedning: number;
   merkingOgSporbarhet: number;
   adresse: string;
+  tilsynshistorikkId: string;
 };
 
 export type QueryParams = {

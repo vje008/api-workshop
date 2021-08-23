@@ -62,7 +62,10 @@ export const TilsynDetails = (props: TilsynDetailsProps) => {
             )}`}</Text>
           </Box>
           <Box bg="gray.100" height="200px">
-            <Text>{`Tilsynsid: ${tilsynDetails.tilsynsId}`}</Text>
+            <Text>{`TilsynsId: ${tilsynDetails.tilsynsId}`}</Text>
+          </Box>
+          <Box bg="gray.100" height="200px">
+            <Text>{`TilsynshistorikkId: ${tilsynDetails.tilsynshistorikkId}`}</Text>
           </Box>
         </SimpleGrid>
       </>
