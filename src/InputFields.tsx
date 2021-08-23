@@ -10,7 +10,7 @@ type InputFieldsProps = {
 export const InputFields = (props: InputFieldsProps) => {
   const [postnummer, setPostnummer] = React.useState<string>("");
   const [poststed, setPoststed] = React.useState<string>();
-  const [smilefjes, setSmilefjes] = React.useState<string>("");
+  const [smilefjes, setSmilefjes] = React.useState<string>();
 
   return (
     <Stack spacing={3} paddingBottom={12}>
@@ -32,14 +32,16 @@ export const InputFields = (props: InputFieldsProps) => {
         <option value="OSLO">Oslo</option>
         <option value="BERGEN">Bergen</option>
       </Select>
-      <Input
-        value={smilefjes}
+      <Select
         onChange={(event) => {
           setSmilefjes(event.target.value);
         }}
         placeholder="Smilefjes"
-        size="lg"
-      />
+      >
+        <option value="BLID">Blid</option>
+        <option value="NØYTRAL">Nøytral</option>
+        <option value="SUR">Sur</option>
+      </Select>
       <Button
         marginBottom={12}
         onClick={() => props.onFetchTilsyn({ postnummer, poststed, smilefjes })}
