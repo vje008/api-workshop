@@ -20,10 +20,12 @@ function getQueryParams(queryParams?: QueryParams): string {
   return queryParamsString;
 }
 
-export async function fetchTilsynList(
-  queryParams?: QueryParams
-): Promise<Response> {
-  return await fetch(
+export function fetchTilsynList(queryParams?: QueryParams): Promise<Response> {
+  return fetch(
     `https://smilefjes.herokuapp.com/tilsyn${getQueryParams(queryParams)}`
   );
+}
+
+export function fetchTilsynDetails(tilsynId: string): Promise<Response> {
+  return fetch(`https://smilefjes.herokuapp.com/tilsyn/${tilsynId}`);
 }

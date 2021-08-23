@@ -2,6 +2,7 @@ import React from "react";
 import { Spinner, SimpleGrid, Box, Text, Button } from "@chakra-ui/react";
 import { TilsynDetailsType } from "./types";
 import { mapSmilefjesToEmoji } from "./utils";
+import { fetchTilsynDetails } from "./api";
 
 type TilsynDetailsProps = {
   tilsynId: string;
@@ -12,14 +13,12 @@ export const TilsynDetails = (props: TilsynDetailsProps) => {
   const [tilsynDetails, setTilsynDetails] = React.useState<TilsynDetailsType>();
 
   React.useEffect(() => {
-    const fetchTilsynDetails = async () => {
-      const response = await fetch(
-        `https://smilefjes.herokuapp.com/tilsyn/${props.tilsynId}`
-      );
+    const getTilsynDetails = async () => {
+      const response = await fetchTilsynDetails(props.tilsynId);
       const tilsyn = await response.json();
       setTilsynDetails(tilsyn);
     };
-    fetchTilsynDetails();
+    getTilsynDetails();
   }, []);
 
   if (tilsynDetails) {
