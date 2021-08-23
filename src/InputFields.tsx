@@ -25,7 +25,6 @@ export const InputFields = (props: InputFieldsProps) => {
       <Select
         onChange={(event) => {
           setPoststed(event.target.value);
-          console.log("event");
         }}
         placeholder="Poststed"
       >
