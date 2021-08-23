@@ -1,59 +1,53 @@
-This project was bootstrapped with
-[Create React App](https://github.com/facebook/create-react-app).
+# Velkommen til API-workshop! 🤓
 
-## Available Scripts
+# DEL 1
 
-In the project directory, you can run:
+# DEL 2
 
-### `yarn start`
+I denne delen skal vi ta det et hakk videre. Nå skal vi se på hvordan vi kan konsumere data fra et eksisterende api inn vår egen frontend-applikasjon.
+##TODO Skrive noe om applikasjonen og hva den gjør.
 
-Runs the app in the development mode.<br /> Open
-[http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Oppsett
 
-The page will reload if you make edits.<br /> You will also see any lint errors
-in the console.
+Før vi starter. Om du ikke har gjort det allerede må du klone dette repoet. https://github.com/bekk/api-workshop/
 
-### `yarn test`
+Om du ikke har jobbet med git og github kan du lese mer om [git](https://git-scm.com/book/en/v2), og hvordan man kloner repoer fra [GitHub](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository). Om du bare vil komme i gang kan [Github Desktop](https://desktop.github.com/) være en fin løsning.
 
-Launches the test runner in the interactive watch mode.<br /> See the section
-about
-[running tests](https://facebook.github.io/create-react-app/docs/running-tests)
-for more information.
+Når du har fått klonet repoet åpner du det i en egnet editor. Om du ikke har en installert er [Visual Studio Code](https://code.visualstudio.com/) en av de mest populære.
 
-### `yarn build`
+Åpne en terminal og naviger til rootmappen av repoet. Her må du kjøre et to kommandoer for å få applikasjonen til å starte.
+Først må vi laste ned alle pakker applikasjonen trenger for å starte. Dette gjøres ved å kjøre denne kommandoen.
 
-Builds the app for production to the `build` folder.<br /> It correctly bundles
-React in production mode and optimizes the build for the best performance.
+```bash
+npm install
+```
 
-The build is minified and the filenames include the hashes.<br /> Your app is
-ready to be deployed!
+Deretter skal vi starte opp applikasjonen med:
 
-See the section about
-[deployment](https://facebook.github.io/create-react-app/docs/deployment) for
-more information.
+```bash
+npm run start
+```
 
-### `yarn eject`
+Når applikasjonen starter skal nettleseren din automatisk åpnes med applikasjonen. Om den ikke gjør det kan du gå inn på nettadressen http://localhost:3000/
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Oppgaver
 
-If you aren’t satisfied with the build tool and configuration choices, you can
-`eject` at any time. This command will remove the single build dependency from
-your project.
+Når du trykker på "Hent tilsyn" i appen skjer det ingenting. Dette er fordi vi må koble sammen frontend med backend.
 
-Instead, it will copy all the configuration files and the transitive
-dependencies (webpack, Babel, ESLint, etc) right into your project so you have
-full control over them. All of the commands except `eject` will still work, but
-they will point to the copied scripts so you can tweak them. At this point
-you’re on your own.
+### Oppgave 1
 
-You don’t have to ever use `eject`. The curated feature set is suitable for
-small and middle deployments, and you shouldn’t feel obligated to use this
-feature. However we understand that this tool wouldn’t be useful if you couldn’t
-customize it when you are ready for it.
+Finn filen `oppgave1.ts`. Her skal vi gjøre applikasjonen i stand til å hente en liste med tilsyn.
 
-## Learn More
+Når du har fått løst oppgaven skal appen vise en liste med tilsyn. Dette er fint, men vi vil gjerne kun hente dataen vi faktisk har lyst på. Dette skal vi se videre på i oppgave 2.
 
-You can learn more in the
-[Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Oppgave 2
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Oppgave 3
+
+Dette er fint, men for å gjøre applikasjonen enda bedre vil vi også hente detaljer om hvert tilsyn. Finn filen `oppgave2.ts` for å løse dette.
+
+### Konklusjon
+
+Gratulerer! 🎉 Du har nå fått koblet sammen frontend med et eksisterende api, og er nå ferdig med del to av workshopen.
+
+# DEL 3
