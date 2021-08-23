@@ -37,7 +37,7 @@ export const TilsynList = ({
   React.useEffect(() => {
     const fetchTilsyn = async () => {
       const response = await fetch(
-        `http://localhost:3003/tilsyn${getQueryParams(queryParams)}`
+        `https://smilefjes.herokuapp.com/tilsyn${getQueryParams(queryParams)}`
       );
       const tilsyn = await response.json();
       setTilsyn(tilsyn);
