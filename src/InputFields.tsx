@@ -1,16 +1,16 @@
 import * as React from "react";
 import { Button } from "@chakra-ui/react";
 import { Input, Stack, Text, Select } from "@chakra-ui/react";
+import { QueryParams } from "./types";
 
 type InputFieldsProps = {
-  onFetchTilsyn: () => void;
+  onFetchTilsyn: (queryParams: QueryParams) => void;
 };
 
 export const InputFields = (props: InputFieldsProps) => {
-  const [] = React.useState(false);
-  const [postnummer, setPostnummer] = React.useState("");
-  const [, setPoststed] = React.useState("");
-  const [smilefjes, setSmilefjes] = React.useState("");
+  const [postnummer, setPostnummer] = React.useState<string>();
+  const [poststed, setPoststed] = React.useState<string>();
+  const [smilefjes, setSmilefjes] = React.useState<string>();
 
   return (
     <Stack spacing={3} paddingBottom={12}>
@@ -25,6 +25,7 @@ export const InputFields = (props: InputFieldsProps) => {
       <Select
         onChange={(event) => {
           setPoststed(event.target.value);
+          console.log("event");
         }}
         placeholder="Poststed"
       >
@@ -40,7 +41,10 @@ export const InputFields = (props: InputFieldsProps) => {
         placeholder="Smilefjes"
         size="lg"
       />
-      <Button marginBottom={12} onClick={props.onFetchTilsyn}>
+      <Button
+        marginBottom={12}
+        onClick={() => props.onFetchTilsyn({ postnummer, poststed, smilefjes })}
+      >
         <Text> Hent tilsyn</Text>
       </Button>
     </Stack>

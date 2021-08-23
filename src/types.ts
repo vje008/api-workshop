@@ -20,3 +20,9 @@ export type TilsynDetailsType = {
   merkingOgSporbarhet: number;
   adresse: string;
 };
+
+export type QueryParams = {
+  postnummer?: string;
+  poststed?: string;
+  smilefjes?: string;
+};
