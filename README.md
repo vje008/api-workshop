@@ -54,6 +54,8 @@ Bytt ut innholdet i url-variablen til dette.
 const url = "https://smilefjes.herokuapp.com/tilsyn";
 ```
 
+</details>
+
 Når du har fått løst oppgaven skal appen vise en liste med tilsyn. Dette er fint, men vi vil gjerne kun hente dataen vi faktisk har lyst på. Dette skal vi se videre på i oppgave 2.
 
 ### Oppgave 2
