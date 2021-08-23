@@ -8,9 +8,9 @@ type InputFieldsProps = {
 };
 
 export const InputFields = (props: InputFieldsProps) => {
-  const [postnummer, setPostnummer] = React.useState<string>();
+  const [postnummer, setPostnummer] = React.useState<string>("");
   const [poststed, setPoststed] = React.useState<string>();
-  const [smilefjes, setSmilefjes] = React.useState<string>();
+  const [smilefjes, setSmilefjes] = React.useState<string>("");
 
   return (
     <Stack spacing={3} paddingBottom={12}>
