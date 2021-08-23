@@ -1,5 +1,13 @@
 # Velkommen til API-workshop! 🤓
 
+## Emoji-guide
+
+Du kommer til å se noen emojis i oppgavene. De betyr ca det her:
+
+- 🏆Oppgave: Her er hva du skal gjøre
+- 💡Tips: Litt ekstra info som kan være greit å være for å løse en oppgave
+- 🚨Løsningsforslag: Her finner du en komplett gjennomgang av hvordan du _kan_ løse oppgaven
+
 # DEL 1
 
 # DEL 2
@@ -37,6 +45,13 @@ Når du trykker på "Hent tilsyn" i appen skjer det ingenting. Dette er fordi vi
 ### Oppgave 1
 
 Finn filen `oppgave1.ts`. Her skal vi gjøre applikasjonen i stand til å hente en liste med tilsyn.
+
+<details><summary>🚨Løsningsforslag</summary>
+Bytt ut innholdet i url-variablen til dette.
+
+```ts
+const url = "https://smilefjes.herokuapp.com/tilsyn";
+```
 
 Når du har fått løst oppgaven skal appen vise en liste med tilsyn. Dette er fint, men vi vil gjerne kun hente dataen vi faktisk har lyst på. Dette skal vi se videre på i oppgave 2.
 

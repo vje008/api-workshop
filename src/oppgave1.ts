@@ -1,27 +1,14 @@
-import { QueryParams } from "./types";
+/**
+ * Velkommen til første oppgave.
+ * Her skal vi få applikasjonen til å hente og vise frem en liste med tilsyn.
+ *
+ *
+ * I Del 1 av workshoppen brukte du postman til å hente ut en hel liste med tilsyn. Finn frem URL'en du brukte for å hente listen og bytt ut innholdet i url-variablen.
+ *
+ * Om du fant riktig url kommer applikasjonen til å vise frem en liste med tilbud når du trykker på knappen "Hent tilsyn"
+ */
+export function fetchTilsynList(): Promise<Response> {
+  const url = "HELE DENNE TEKSTEN SKAL BYTTES UT";
 
-function getQueryParams(queryParams?: QueryParams): string {
-  let queryParamsString = "?";
-  if (queryParams?.smilefjes) {
-    queryParamsString = queryParamsString.concat(
-      `smilefjes=${queryParams.smilefjes}&`
-    );
-  }
-  if (queryParams?.postnummer) {
-    queryParamsString = queryParamsString.concat(
-      `postnummer=${queryParams.postnummer}&`
-    );
-  }
-  if (queryParams?.poststed) {
-    queryParamsString = queryParamsString.concat(
-      `poststed=${queryParams.poststed}&`
-    );
-  }
-  return queryParamsString;
-}
-
-export function fetchTilsynList(queryParams?: QueryParams): Promise<Response> {
-  return fetch(
-    `https://smilefjes.herokuapp.com/tilsyn${getQueryParams(queryParams)}`
-  );
+  return fetch(url);
 }
