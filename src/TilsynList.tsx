@@ -2,6 +2,8 @@ import React from "react";
 import { Table, Thead, Tbody, Tr, Th, Td, Spinner } from "@chakra-ui/react";
 import { QueryParams, Tilsyn } from "./types";
 import { mapSmilefjesToEmoji } from "./utils";
+import { fetchTilsynList } from "./api";
+import { isTypeNode } from "typescript";
 
 type TilsynListProps = {
   onShowTilsynDetails: (tilsynId: string) => void;
@@ -14,31 +16,9 @@ export const TilsynList = ({
 }: TilsynListProps) => {
   const [tilsyn, setTilsyn] = React.useState<Tilsyn[]>();
 
-  function getQueryParams(queryParams?: QueryParams): string {
-    let queryParamsString = "?";
-    if (queryParams?.smilefjes) {
-      queryParamsString = queryParamsString.concat(
-        `smilefjes=${queryParams.smilefjes}&`
-      );
-    }
-    if (queryParams?.postnummer) {
-      queryParamsString = queryParamsString.concat(
-        `postnummer=${queryParams.postnummer}&`
-      );
-    }
-    if (queryParams?.poststed) {
-      queryParamsString = queryParamsString.concat(
-        `poststed=${queryParams.poststed}&`
-      );
-    }
-    return queryParamsString;
-  }
-
   React.useEffect(() => {
     const fetchTilsyn = async () => {
-      const response = await fetch(
-        `https://smilefjes.herokuapp.com/tilsyn${getQueryParams(queryParams)}`
-      );
+      const response = await fetchTilsynList(queryParams);
       const tilsyn = await response.json();
       setTilsyn(tilsyn);
     };
@@ -65,6 +45,7 @@ export const TilsynList = ({
                 onClick={() => {
                   onShowTilsynDetails(item.tilsynsId);
                 }}
+                key={item.tilsynsId}
               >
                 <Td>{item.navn}</Td>
                 <Td>{item.poststed}</Td>
