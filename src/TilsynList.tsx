@@ -1,5 +1,14 @@
 import React from "react";
-import { Table, Thead, Tbody, Tr, Th, Td, Spinner } from "@chakra-ui/react";
+import {
+  Table,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  Spinner,
+  Button,
+} from "@chakra-ui/react";
 import { QueryParams, Tilsyn } from "./types";
 import { mapSmilefjesToEmoji } from "./utils";
 import { fetchTilsynList } from "./oppgave1";
@@ -7,6 +16,7 @@ import {
   shouldUseInputFields,
   fetchTilsynListWithQueryParams,
 } from "./oppgave2";
+import { enableDetailsLink } from "./oppgave3";
 
 type TilsynListProps = {
   onShowTilsynDetails: (tilsynId: string) => void;
@@ -59,18 +69,24 @@ export const TilsynList = ({
         <Tbody>
           {tilsyn &&
             tilsyn.map((item) => (
-              <Tr
-                onClick={() => {
-                  onShowTilsynDetails(item.tilsynsId);
-                }}
-                key={item.tilsynsId}
-              >
+              <Tr key={item.tilsynsId}>
                 <Td>{item.navn}</Td>
                 <Td>{item.poststed}</Td>
                 <Td>{item.postnummer}</Td>
                 <Td>{item.dato}</Td>
                 <Td>{mapSmilefjesToEmoji(item.smilefjes)}</Td>
                 <Td>{item.tilsynsId}</Td>
+                {enableDetailsLink && (
+                  <Td>
+                    <Button
+                      onClick={() => {
+                        onShowTilsynDetails(item.tilsynsId);
+                      }}
+                    >
+                      Se detaljer
+                    </Button>
+                  </Td>
+                )}
               </Tr>
             ))}
         </Tbody>
