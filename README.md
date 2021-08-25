@@ -146,6 +146,7 @@ const url = `https://smilefjes.herokuapp.com/tilsyn/${tilsynId}`;
 ```
 
 </details>
+
 ### Konklusjon
 
 Gratulerer! 🎉 Du har nå fått koblet sammen frontend med et eksisterende api, og er nå ferdig med del to av workshopen.
