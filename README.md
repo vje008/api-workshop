@@ -125,6 +125,27 @@ Du kan gjøre ganske mye kult med Template literals. Ta en titt [her](https://de
 
 Nå har vi gjort applikasjonen i stand til ikke bare hente tilsyn, men også hente de tilsynene vi har lyst på basert på query parameterne vi sender inn. Nå skal vi se på hvordan vi kan gå frem får å hente ut detaljer om et tilsyn. Finn filen `oppgave3.ts` for å løse dette.
 
+<details><summary>💡 Tips</summary>
+For å løse oppgaven må du ta i bruke et stiparameter (path-params). Stiparametre brukes ofte ved at man sender inn id'en til ressursen man har lyst til å hente.
+
+Sti parametre legges til på slutten av stien følgende format `/stiParameter`.
+
+En hel url på da seende ut som dette.
+
+```ts
+"http://example.com/movie/123";
+```
+
+</details>
+
+<details><summary>🚨Løsningsforslag</summary>
+Bytt ut innholdet i url-variablen til dette.
+
+```ts
+const url = `https://smilefjes.herokuapp.com/tilsyn/${tilsynId}`;
+```
+
+</details>
 ### Konklusjon
 
 Gratulerer! 🎉 Du har nå fått koblet sammen frontend med et eksisterende api, og er nå ferdig med del to av workshopen.
