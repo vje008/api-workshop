@@ -150,3 +150,115 @@ const url = `https://smilefjes.herokuapp.com/tilsyn/${tilsynId}`;
 Gratulerer! 🎉 Du har nå fått koblet sammen frontend med et eksisterende api, og er nå ferdig med del to av workshopen.
 
 # DEL 3
+
+I del tre skal vi se på hvordan en backend kan fungere.
+
+## Oppgaver
+
+På samme måte som i del 2 må vi laste ned, installere og kjøre opp backend. Kildekoden til backend finner du på [https://github.com/bekk/api-workshop-backend](https://github.com/bekk/api-workshop-backend).
+
+Klon repoet på [samme måte som i del 2](https://github.com/bekk/api-workshop#oppsett). Husk å bytt URL!
+
+Etter prosjektet er lastet ned kjør npm install for å installere programvaren, og npm run start for å starte backend.
+
+```bash
+npm install
+``
+og 
+```bash
+npm run start
+```
+
+Når man kjører "npm run start" vil backend vil starte opp lokalt på http://localhost:3003 
+Verifisert at backend kjører ved å se at meldingen "Cannot GET /" dukker opp når du åpner http://localhost:3003 i nettleseren. 
+
+### Oppgave 1
+
+I del 1 brukte vi Postman for å kjøre requests mot en tjeneste ute på internett. Nå skal vi bruke bruke postman for å hente data fra vår backend som kjører lokalt på maskinen. Bytt ut URL fra del 1 til å gå mot vår lokale backend.
+
+<details><summary>🚨Løsningsforslag</summary>
+Sett endepunkt-URL i postman til å være `http://localhost:3003/tilsyn`
+
+</details>
+
+
+### Oppgave 2
+Bytt ut endepunktene i frontend-løsningen til å gå mot den lokale backend-tjenesten.
+
+<details><summary>🚨Løsningsforslag</summary>
+I filen `oppgave1.ts` i frontend-prosjektet sett url-variabelen til å være:
+
+```ts
+const url = "http://localhost:3003/tilsyn";
+```
+
+I filen `oppgave2.ts` i frontend-prosjektet sett url-variabelen til å være:
+
+```ts
+const url = `http://localhost:3003/tilsyn?postnummer=${postnummer}&poststed=${poststed}&smilefjes=${smilefjes}`;
+```
+
+I filen `oppgave3.ts` i frontend-prosjektet sett url-variabelen til å være:
+
+```ts
+const url = `http://localhost:3003/tilsyn/${tilsynId}`;
+```
+
+</details>
+
+
+### Oppgave 3
+Lag et nytt endepunkt i backend `/hei` som returnerer `"hei"`. Verifiser at det fungerer med å bruke postman.
+
+</details>
+
+<details><summary>🧠 Dypdykk</summary>
+...
+</details>
+
+<details><summary>🚨Løsningsforslag</summary>
+I `app.js` filen legg til:
+
+```js
+app.get("/hei", (req, res) => {
+  res.send("hei");
+});
+```
+
+og test endepunktet med postman mot http://localhost:3003/hei og sjekk at reponsen er "hei"
+
+</details>
+
+
+### Oppgave 4
+Lag et endepunkt som kun returnerer et smilefjes basert på tilsyns-id. /tilsyn/{tilsynsId}/fjes og test det med postman.
+
+<details><summary>🚨Løsningsforslag</summary>
+I `app.js` filen legg til:
+
+```js
+app.get("/tilsyn/:tilsynsId/fjes", (req, res) => {
+  const tilsyn = tilsynsListe.find((tilsyn) => {
+    return tilsyn.tilsynsId.toString() == req.params.tilsynsId;
+  });
+  
+  var fjes;
+  if (tilsyn.smilefjes === "BLID") {
+    fjes = ":)";
+  } else if (tilsyn.smilefjes === "NØYTRAL") {
+    fjes = ":|";
+  } else {
+    fjes = ":(";
+  }
+
+  res.send(fjes);
+});
+```
+
+og test endepunktet med postman mot `http://localhost:3003/tilsyn/935d9947-2304-4e72-a57c-7f9f03081a1d/fjes`
+
+</details>
+
+### Oppgave 5 (bonus)
+Vis simlefjeset fra oppgave 4 i detaljesiden til et tilsyn.
+
