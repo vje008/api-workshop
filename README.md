@@ -151,21 +151,18 @@ Gratulerer! 🎉 Du har nå fått koblet sammen frontend med et eksisterende api
 
 # DEL 3
 
-I del tre skal vi se på hvordan en backend kan fungere.
+I del 3 skal vi se på hvordan en backend kan fungere. Vi kommer til å kjøre vår egen backend lokalt på maskinen.
 
 ## Oppgaver
 
 På samme måte som i del 2 må vi laste ned, installere og kjøre opp backend. Kildekoden til backend finner du på [https://github.com/bekk/api-workshop-backend](https://github.com/bekk/api-workshop-backend).
 
-Klon repoet på [samme måte som i del 2](https://github.com/bekk/api-workshop#oppsett). Husk å bytt URL!
+Klon repoet og installer programvaren på [samme måte som i del 2](https://github.com/bekk/api-workshop#oppsett). Husk å bytt URL!
 
-Etter prosjektet er lastet ned kjør npm install for å installere programvaren, og npm run start for å starte backend.
+Etter prosjektet er lastet ned naviger til backend-mappen og kjør npm install for å installere programvaren, og npm run start for å starte backend.
 
 ```bash
 npm install
-``
-og 
-```bash
 npm run start
 ```
 
