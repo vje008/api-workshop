@@ -8,7 +8,7 @@
  */
 
 /**
- * Start med å endre verdien av variablen fetchTilsynDetails fra false til true
+ * Start med å endre verdien av variablen enableDetailsLink fra false til true
  * Nå skal det dukke opp en knapp med "Se detaljer" på hvert tilsyn i listen. Denne knappen tar deg videre til en detaljeside for hvert tilsyn.
  *
  * Du skal nå bytte url slik at applikasjonen er i stand til å hente data for å fylle ut data om den nye siden.
