@@ -7,7 +7,7 @@ Du kommer til å se noen emojis i oppgavene. De betyr ca det her:
 - 🏆 Oppgave: Her er hva du skal gjøre
 - 💡 Tips: Litt ekstra info som kan være greit å være for å løse en oppgave
 - 🚨 Løsningsforslag: Her finner du en komplett gjennomgang av hvordan du _kan_ løse oppgaven
-- 🧠 Til videre læring. Lenker og tips til hva man kan lese mer om for å få en dypere forståelse.
+- 🧠 Til videre læring: Lenker og tips til hva man kan lese mer om for å få en dypere forståelse.
 
 # DEL 1
 
