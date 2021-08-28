@@ -11,7 +11,7 @@ Du kommer til å se noen emojis i oppgavene. De betyr ca det her:
 
 # DEL 1
 
-I denne delen skal vi lære oss å konstruere requester og bruke disse for å hente ut data fra et åpent API som eies av Digitaliseringsdirektoratet ved hjelp av verktøyet Postman. 
+I denne delen skal vi lære oss å konstruere requester og bruke disse for å hente ut data fra et åpent API som eies av Digitaliseringsdirektoratet ved hjelp av verktøyet Postman.
 
 ## Oppsett
 
@@ -21,7 +21,7 @@ Dersom du ikke allerede har lastet ned Postman, gjør det nå. https://www.postm
 
 ### Oppgave 1
 
-Vi starter veldig enkelt og skal bare hente ut restaurantene i listen fra https://hotell.difi.no/?dataset=mattilsynet/smilefjes/tilsyn. 
+Vi starter veldig enkelt og skal bare hente ut restaurantene i listen fra https://hotell.difi.no/?dataset=mattilsynet/smilefjes/tilsyn.
 
 Ta en titt på all dataen du får ut. Denne skal vi i senere oppgaver vise i vår egen tjeneste 💥
 
@@ -33,7 +33,6 @@ https://hotell.difi.no/api/json/mattilsynet/smilefjes/tilsyn
 ```
 
 </details>
-
 
 ### Oppgave 2
 
@@ -48,14 +47,13 @@ Bytt ut urlen i oppgave 1 med den under
 
 ```ts
 https://hotell.difi.no/api/json/mattilsynet/smilefjes/tilsyn?postnr=7030
-  ```
+```
 
 </details>
 
 ### Konklusjon
 
 Godt jobbet! Nå er du ferdig med del 1 og har lært deg å gjøre enkle kall til et åpent API 💯
-
 
 # DEL 2
 
@@ -65,7 +63,7 @@ I denne delen skal vi ta det et hakk videre. Nå skal vi se på hvordan vi kan k
 
 ## Oppsett
 
-Om du ikke har gjort det allerede må du klone dette repoet før vi starter. 
+Om du ikke har gjort det allerede må du klone dette repoet før vi starter.
 
 Om du ikke har jobbet med git og github kan du lese mer om [git](https://git-scm.com/book/en/v2), og hvordan man kloner repoer fra [GitHub](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository). Om du bare vil komme i gang kan [Github Desktop](https://desktop.github.com/) være en fin løsning.
 
@@ -88,12 +86,12 @@ Når applikasjonen starter skal nettleseren din automatisk åpnes med applikasjo
 
 ## Oppgaver
 
-Når du trykker på "Hent tilsyn" i appen skjer det ingenting. Dette er fordi vi må koble sammen frontend med backend 🤓 
-Oppgaveteksten til hver oppgave finner du i oppgavefilene. 
+Når du trykker på "Hent tilsyn" i appen skjer det ingenting. Dette er fordi vi må koble sammen frontend med backend 🤓
+Oppgaveteksten til hver oppgave finner du i oppgavefilene. Vi skal bruke API'et fra del 1. Dokumentasjonen på dette finner du på https://smilefjes.herokuapp.com/api-docs/.
 
 ### Oppgave 1
 
-Finn filen `oppgave1.ts`. Her skal vi gjøre applikasjonen i stand til å hente en liste med tilsyn. 
+Finn filen `oppgave1.ts`. Her skal vi gjøre applikasjonen i stand til å hente en liste med tilsyn.
 
 <details><summary>🚨 Løsningsforslag</summary>
 Bytt ut innholdet i url-variablen til dette:
@@ -108,7 +106,7 @@ Når du har fått løst oppgaven skal appen vise en liste med tilsyn. Dette er f
 
 <details><summary>🧠 Dypdykk</summary>
 Om du så litt etter la du merke til at vi brukte `fetch()` til å hente data. Om du har lyst til å lage flere webapplikasjoner som henter data fra web kommer du garantert til å ha nytte av å kunne mer om dette. MDN har en fin guide: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API.
- 
+
 
 ```ts
 fetch("http://example.com/movies.json")
@@ -178,7 +176,7 @@ Nå har vi gjort applikasjonen i stand til ikke bare hente tilsyn, men også hen
 For å løse oppgaven må du ta i bruke et stiparameter (path-params). Stiparametre brukes ofte ved at man sender inn id'en til ressursen man har lyst til å hente. Sti parametre legges til på slutten av stien på følgende format: `/stiParameter`.
 
 En hel URL vil da bli seende ut som dette:
-  
+
 ```ts
 "http://example.com/movie/123";
 ```
@@ -215,8 +213,8 @@ npm install
 npm run start
 ```
 
-Når man kjører "npm run start" vil backend vil starte opp lokalt på http://localhost:3003 
-Verifisert at backend kjører ved å se at meldingen "Cannot GET /" dukker opp når du åpner http://localhost:3003 i nettleseren. 
+Når man kjører "npm run start" vil backend vil starte opp lokalt på http://localhost:3003
+Verifisert at backend kjører ved å se at meldingen "Cannot GET /" dukker opp når du åpner http://localhost:3003 i nettleseren.
 
 ### Oppgave 1
 
@@ -227,8 +225,8 @@ Sett endepunkt-URL i postman til å være `http://localhost:3003/tilsyn`
 
 </details>
 
-
 ### Oppgave 2
+
 Bytt ut endepunktene i frontend-løsningen til å gå mot den lokale backend-tjenesten.
 
 <details><summary>🚨 Løsningsforslag</summary>
@@ -252,8 +250,8 @@ const url = `http://localhost:3003/tilsyn/${tilsynId}`;
 
 </details>
 
-
 ### Oppgave 3
+
 Lag et nytt endepunkt i backend `/hei` som returnerer `"hei"`. Verifiser at det fungerer med å bruke postman.
 
 </details>
@@ -275,8 +273,8 @@ og test endepunktet med postman mot http://localhost:3003/hei og sjekk at repons
 
 </details>
 
-
 ### Oppgave 4
+
 Lag et endepunkt som kun returnerer et smilefjes basert på tilsyns-id. /tilsyn/{tilsynsId}/fjes og test det med postman.
 
 <details><summary>🚨 Løsningsforslag</summary>
@@ -287,7 +285,7 @@ app.get("/tilsyn/:tilsynsId/fjes", (req, res) => {
   const tilsyn = tilsynsListe.find((tilsyn) => {
     return tilsyn.tilsynsId.toString() == req.params.tilsynsId;
   });
-  
+
   var fjes;
   if (tilsyn.smilefjes === "BLID") {
     fjes = ":)";
@@ -306,5 +304,5 @@ og test endepunktet med postman mot `http://localhost:3003/tilsyn/935d9947-2304-
 </details>
 
 ### Oppgave 5 (bonus)
-Vis smilefjeset fra oppgave 4 i detaljsiden til et tilsyn.
 
+Vis smilefjeset fra oppgave 4 i detaljsiden til et tilsyn.
