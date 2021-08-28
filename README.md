@@ -48,6 +48,7 @@ Bytt ut urlen i oppgave 1 med den under
 
 ```ts
 https://hotell.difi.no/api/json/mattilsynet/smilefjes/tilsyn?postnr=7030
+  ```
 
 </details>
 
