@@ -40,7 +40,7 @@ https://hotell.difi.no/api/json/mattilsynet/smilefjes/tilsyn
 Nå skal vi ikke hente ut alle de 100 første restaurantene. Istedet skal vi hente ut alle restauranter som oppfyller et krav. Forslaget vårt er å velge et postnummer, f. eks. 7030 i Trondheim. Får du det til med en variabel, må du gjerne legge til flere.
 
 <details><summary>💡 Tips</summary>
-Vi må huske på å ha med ```?``` før våre parametere
+Vi må huske på å ha med `?` før våre parametere
 </details>
 
 <details><summary>🚨Løsningsforslag</summary>
