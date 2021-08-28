@@ -11,6 +11,51 @@ Du kommer til å se noen emojis i oppgavene. De betyr ca det her:
 
 # DEL 1
 
+I denne delen skal vi lære oss å konstruere requester og bruke disse for å hente ut data fra et åpent api som eies av Digitaliseringsdirektoratet ved hjelp av verktøyet Postman. 
+
+## Oppsett
+
+Dersom du ikke allerede har lastet ned Postman, gjør det nå. https://www.postman.com/downloads/. Det er alt du trenger til denne delen!
+
+##Oppgaver
+
+### Oppgave 1
+
+Vi starter veldig enkelt og skal bare hente ut restaurantene i listen fra https://hotell.difi.no/?dataset=mattilsynet/smilefjes/tilsyn. 
+
+Ta en titt på all dataen du får ut. Denne skal vi i senere oppgaver vise i vår egen tjeneste 💥
+
+<details><summary>🚨Løsningsforslag</summary>
+Pass på at du gjør en get request og legg inn urlen under
+
+```ts
+https://hotell.difi.no/api/json/mattilsynet/smilefjes/tilsyn
+```
+
+</details>
+
+
+### Oppgave 2
+
+Nå skal vi ikke hente ut alle de 100 første restaurantene. Istedet skal vi hente ut alle restauranter som oppfyller et krav. Forslaget vårt er å velge et postnummer, f. eks. 7030 i Trondheim. Får du det til med en variabel, må du gjerne legge til flere.
+
+<details><summary>💡 Tips</summary>
+Vi må huske på å ha med ```?``` før våre parametere
+</details>
+
+<details><summary>🚨Løsningsforslag</summary>
+Bytt ut urlen i oppgave 1 med den under
+
+```ts
+https://hotell.difi.no/api/json/mattilsynet/smilefjes/tilsyn?postnr=7030
+
+</details>
+
+### Konklusjon
+
+Godt jobbet! Nå er du ferdig med del 1 og har lært deg å gjøre enkle kall til et åpent api 💯
+
+
 # DEL 2
 
 I denne delen skal vi ta det et hakk videre. Nå skal vi se på hvordan vi kan konsumere data fra et eksisterende api inn vår egen frontend-applikasjon.
