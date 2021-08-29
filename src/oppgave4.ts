@@ -4,7 +4,7 @@
  * Nå har vi fått til å både hente en liste med tilsyn og detaljer om et tilsyn, men om du har forsøkt å hente ut tilsyn som har resultert i et surt smilefjes
  * får vi bare en tom liste. Dette er fordi de er "passordbeskyttet".
  *
- * For å få tak i disse må legge til header-parameteret "accessToken" med verdi "superduperhemmeligpassord". TODO: Legge til OBS: om du møter en så simpel passordløsning i noe som holder på ekte data/ Dette er en forenklet passordløsning kun for å vise frem at man ofte bruker header-parametre for
+ * For å få tak i disse må legge til header-parameteret "accessToken" med verdi "superduperhemmeligpassord".
  */
 
 /**
