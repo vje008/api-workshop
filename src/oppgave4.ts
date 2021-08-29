@@ -26,7 +26,7 @@ export function fetchTilsynListWitHeaderParam(
   const poststed = queryParams?.poststed;
   const smilefjes = queryParams?.smilefjes;
 
-  const url = `http://localhost:3003/tilsyn?postnummer=${postnummer}&poststed=${poststed}&smilefjes=${smilefjes}`;
+  const url = `BYTT UT DENNE MED SVARET FRA OPPGAVE 2`;
 
   return fetch(url, {
     headers: {
