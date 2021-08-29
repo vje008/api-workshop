@@ -238,14 +238,14 @@ På samme måte som i del 2 må vi laste ned, installere og kjøre opp backend. 
 
 Klon repoet og installer programvaren på [samme måte som i del 2](https://github.com/bekk/api-workshop#oppsett). Husk å bytt URL!
 
-Etter prosjektet er lastet ned naviger til backend-mappen og kjør npm install for å installere programvaren, og npm run start for å starte backend.
+Etter prosjektet er lastet ned naviger til backend-mappen og kjør npm install for å installere programvaren, og npm run dev for å starte backend.
 
 ```bash
 npm install
-npm run start
+npm run dev
 ```
 
-Når man kjører "npm run start" vil backend vil starte opp lokalt på http://localhost:3003
+Når man kjører "npm run dev" vil backend vil starte opp lokalt på http://localhost:3003
 Verifisert at backend kjører ved å se at meldingen "Cannot GET /" dukker opp når du åpner http://localhost:3003 i nettleseren.
 
 ### Oppgave 1
