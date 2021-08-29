@@ -17,6 +17,12 @@ import {
   shouldUseInputFields,
   fetchTilsynListWithQueryParams,
 } from "./oppgave2";
+
+import {
+  shouldUseAccessToken,
+  fetchTilsynListWitHeaderParam,
+} from "./oppgave4";
+
 import { enableDetailsLink } from "./oppgave3";
 
 type TilsynListProps = {
@@ -35,9 +41,17 @@ export const TilsynList = ({
   const [tilsyn, setTilsyn] = React.useState<Tilsyn[]>();
 
   React.useEffect(() => {
-    if (shouldUseInputFields) {
+    if (shouldUseInputFields && !shouldUseAccessToken) {
       const fetchTilsyn = async () => {
         const response = await fetchTilsynListWithQueryParams(queryParams);
+        const tilsyn = await response.json();
+        setTilsyn(tilsyn);
+        onFetchedTilsyn();
+      };
+      fetchTilsyn();
+    } else if (shouldUseAccessToken) {
+      const fetchTilsyn = async () => {
+        const response = await fetchTilsynListWitHeaderParam(queryParams);
         const tilsyn = await response.json();
         setTilsyn(tilsyn);
         onFetchedTilsyn();

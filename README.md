@@ -21,7 +21,7 @@ Dersom du ikke allerede har lastet ned Postman, gjør det nå. https://www.postm
 
 ### Oppgave 1
 
-Vi starter veldig enkelt og skal bare hente ut restaurantene i listen fra https://hotell.difi.no/?dataset=mattilsynet/smilefjes/tilsyn gjennom urlen https://hotell.difi.no/api/json/mattilsynet/smilefjes/tilsyn. 
+Vi starter veldig enkelt og skal bare hente ut restaurantene i listen fra https://hotell.difi.no/?dataset=mattilsynet/smilefjes/tilsyn gjennom urlen https://hotell.difi.no/api/json/mattilsynet/smilefjes/tilsyn.
 
 Ta en titt på all dataen du får ut. Denne skal vi i senere oppgaver vise i vår egen tjeneste 💥
 
@@ -187,6 +187,39 @@ Bytt ut innholdet i url-variablen til dette:
 
 ```ts
 const url = `https://smilefjes.herokuapp.com/tilsyn/${tilsynId}`;
+```
+
+</details>
+
+### Oppgave 4
+
+Nå har vi gjort applikasjonen i stand til å en liste med tilsyn, samt vise detaljer om et enkelt tilsyn. Problemet er at vi enda ikke får hentet ut de tilsynene som har resultert i et surt smilefjes. Om vi prøver å hente disse får vi bare en tom liste tilbake. Dette skal vi løse ved å bruke header-parametre. Finn filen `oppgave4.ts` og fortsett der.
+
+<details><summary>💡 Tips</summary>
+For å løse oppgaven må du ta i bruke et header-paramtre og sende inn det superduperhemmeligepassordet der. MDN har en fin beskrivelse av hva HTTP-headeren er for noe her: https://developer.mozilla.org/en-US/docs/Glossary/Request_header.
+
+I frontendapplikasjonen vår bruker vi [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) til å hente data fra backenden. I tillegg til selve URL'en kan vi også sende inn et javascript-objekt inn som parameter til fetch. Du kan se dokumentasjon og eksempeler på det på https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#supplying_request_options.
+
+I eksempelet under bruker vi en header-parameter for å styre hvilket format vi ønsker å få data tilbake fra backend.
+
+```ts
+return fetch(url, {
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+```
+
+</details>
+
+<details><summary>🚨 Løsningsforslag</summary>
+
+```ts
+return fetch(url, {
+  headers: {
+    accessToken: "superduperhemmeligpassord",
+  },
+});
 ```
 
 </details>
