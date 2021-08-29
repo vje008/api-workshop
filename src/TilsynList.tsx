@@ -8,6 +8,7 @@ import {
   Td,
   Spinner,
   Button,
+  Box,
 } from "@chakra-ui/react";
 import { QueryParams, Tilsyn } from "./types";
 import { mapSmilefjesToEmoji } from "./utils";
@@ -55,44 +56,55 @@ export const TilsynList = ({
 
   if (tilsyn) {
     return (
-      <Table variant="striped" colorScheme="teal">
-        <Thead>
-          <Tr>
-            <Th>Navn</Th>
-            <Th>Poststed</Th>
-            <Th isNumeric>Postnummer</Th>
-            <Th>Dato</Th>
-            <Th>Smilefjes</Th>
-            <Th>Tilsynsid</Th>
-          </Tr>
-        </Thead>
-        <Tbody>
-          {tilsyn &&
-            tilsyn.map((item) => (
-              <Tr key={item.tilsynsId}>
-                <Td>{item.navn}</Td>
-                <Td>{item.poststed}</Td>
-                <Td>{item.postnummer}</Td>
-                <Td>{item.dato}</Td>
-                <Td>{mapSmilefjesToEmoji(item.smilefjes)}</Td>
-                <Td>{item.tilsynsId}</Td>
-                {enableDetailsLink && (
-                  <Td>
-                    <Button
-                      onClick={() => {
-                        onShowTilsynDetails(item.tilsynsId);
-                      }}
-                    >
-                      Se detaljer
-                    </Button>
-                  </Td>
-                )}
-              </Tr>
-            ))}
-        </Tbody>
-      </Table>
+      <Box alignItems="flex-start" alignContent="flex-start">
+        <Table variant="striped" colorScheme="teal">
+          <Thead>
+            <Tr>
+              <Th>Navn</Th>
+              <Th>Poststed</Th>
+              <Th isNumeric>Postnummer</Th>
+              <Th>Dato</Th>
+              <Th>Smilefjes</Th>
+              <Th>Tilsynsid</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            {tilsyn &&
+              tilsyn.map((item) => (
+                <Tr key={item.tilsynsId}>
+                  <Td>{item.navn}</Td>
+                  <Td>{item.poststed}</Td>
+                  <Td>{item.postnummer}</Td>
+                  <Td>{item.dato}</Td>
+                  <Td>{mapSmilefjesToEmoji(item.smilefjes)}</Td>
+                  <Td>{item.tilsynsId}</Td>
+                  {enableDetailsLink && (
+                    <Td>
+                      <Button
+                        colorScheme="blue"
+                        onClick={() => {
+                          onShowTilsynDetails(item.tilsynsId);
+                        }}
+                      >
+                        Se detaljer
+                      </Button>
+                    </Td>
+                  )}
+                </Tr>
+              ))}
+          </Tbody>
+        </Table>
+      </Box>
     );
   } else {
-    return <Spinner />;
+    return (
+      <Spinner
+        thickness="4px"
+        speed="0.65s"
+        emptyColor="gray.200"
+        color="blue.500"
+        size="xl"
+      />
+    );
   }
 };

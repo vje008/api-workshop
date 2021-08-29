@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ChakraProvider, Box, Grid, theme } from "@chakra-ui/react";
+import { ChakraProvider, Box, Grid, theme, Container } from "@chakra-ui/react";
 import { TilsynList } from "./TilsynList";
 import { InputFields } from "./InputFields";
 import { TilsynDetails } from "./TilsynDetails";
@@ -29,29 +29,27 @@ export const App = () => {
 
   return (
     <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3} paddingTop={12} paddingBottom={12}>
-          {showTilsynSearch && (
-            <InputFields onFetchTilsyn={handleOnFetchTilsyn} />
-          )}
+      <Container maxW="container.lg" paddingTop="10">
+        {showTilsynSearch && (
+          <InputFields onFetchTilsyn={handleOnFetchTilsyn} />
+        )}
 
-          {showTilsynList && (
-            <TilsynList
-              onShowTilsynDetails={(tilsynId: string) => {
-                setShowTilsynList(false);
-                setShowTilsynSearch(false);
-                setSelectedTilsyn(tilsynId);
-              }}
-              queryParams={queryParams}
-              shouldFetchTilsyn={shouldFetchTilsyn}
-              onFetchedTilsyn={() => setShouldFetchTilsyn(false)}
-            />
-          )}
-          {selectedTilsyn && (
-            <TilsynDetails tilsynId={selectedTilsyn} onClear={clear} />
-          )}
-        </Grid>
-      </Box>
+        {showTilsynList && (
+          <TilsynList
+            onShowTilsynDetails={(tilsynId: string) => {
+              setShowTilsynList(false);
+              setShowTilsynSearch(false);
+              setSelectedTilsyn(tilsynId);
+            }}
+            queryParams={queryParams}
+            shouldFetchTilsyn={shouldFetchTilsyn}
+            onFetchedTilsyn={() => setShouldFetchTilsyn(false)}
+          />
+        )}
+        {selectedTilsyn && (
+          <TilsynDetails tilsynId={selectedTilsyn} onClear={clear} />
+        )}
+      </Container>
     </ChakraProvider>
   );
 };
