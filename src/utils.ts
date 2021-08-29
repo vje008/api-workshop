@@ -10,12 +10,12 @@ export function mapSmilefjesToEmoji(smilefjes: string): string {
 
 export function mapSmilefjesScoreToEmoji(score: number): string {
   switch (score) {
+    case 0:
     case 1:
-    case 2:
       return "😃";
-    case 3:
+    case 2:
       return "😐";
-    case 4:
+    case 3:
       return "😠";
     default:
       return "😃";
