@@ -21,7 +21,7 @@ Dersom du ikke allerede har lastet ned Postman, gjør det nå. https://www.postm
 
 ### Oppgave 1
 
-Vi starter veldig enkelt og skal bare hente ut restaurantene i listen fra https://hotell.difi.no/?dataset=mattilsynet/smilefjes/tilsyn.
+Vi starter veldig enkelt og skal bare hente ut restaurantene i listen fra https://hotell.difi.no/?dataset=mattilsynet/smilefjes/tilsyn gjennom urlen https://hotell.difi.no/api/json/mattilsynet/smilefjes/tilsyn. 
 
 Ta en titt på all dataen du får ut. Denne skal vi i senere oppgaver vise i vår egen tjeneste 💥
 
