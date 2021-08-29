@@ -17,7 +17,7 @@
 
 import { QueryParams } from "./types";
 
-export const shouldUseAccessToken = true;
+export const shouldUseAccessToken = false;
 
 export function fetchTilsynListWitHeaderParam(
   queryParams?: QueryParams
@@ -31,7 +31,6 @@ export function fetchTilsynListWitHeaderParam(
   return fetch(url, {
     headers: {
       // Her må vi legge til et parameter
-      accessToken: "superduperhemmeligpassord",
     },
   });
 }
