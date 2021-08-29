@@ -77,7 +77,6 @@ export const TilsynList = ({
                   <Td>{item.postnummer}</Td>
                   <Td>{item.dato}</Td>
                   <Td>{mapSmilefjesToEmoji(item.smilefjes)}</Td>
-                  <Td>{item.tilsynsId}</Td>
                   {enableDetailsLink && (
                     <Td>
                       <Button

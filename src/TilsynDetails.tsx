@@ -8,9 +8,14 @@ import {
   Heading,
   Center,
   Stack,
+  Table,
+  Tbody,
+  Tr,
+  Td,
+  Tag,
 } from "@chakra-ui/react";
 import { TilsynDetailsType } from "./types";
-import { mapSmilefjesToEmoji } from "./utils";
+import { mapSmilefjesScoreToEmoji, mapSmilefjesToEmoji } from "./utils";
 import { fetchTilsynDetails } from "./oppgave3";
 
 type TilsynDetailsProps = {
@@ -41,13 +46,13 @@ export const TilsynDetails = (props: TilsynDetailsProps) => {
         >
           Gå tilbake
         </Button>
-        <Center h="100px">
+        <Center h="100px" marginBottom="50">
           <Stack marginBottom="10">
             <Heading>{tilsynDetails.navn}</Heading>
-            <Text>
+            <Text as="em">
               {`${tilsynDetails.adresse}, ${tilsynDetails.postnummer} ${tilsynDetails.poststed}`}
             </Text>
-            <Text>Tilsyn gjennomført: {tilsynDetails.dato} </Text>
+            <Text as="em">Tilsyn gjennomført: {tilsynDetails.dato} </Text>
           </Stack>
         </Center>
         <SimpleGrid minChildWidth="260px" spacing="40px">
@@ -58,16 +63,52 @@ export const TilsynDetails = (props: TilsynDetailsProps) => {
             )}`}</Text>
           </Box>
 
-          <Box bg="gray.100" height="200px">
-            <Text>{`Lokaler og utstyr: ${tilsynDetails.lokalerOgUtstyr}`}</Text>
-            <Text>{`Mathåndtering og tilbredning: ${tilsynDetails.mathåndteringOgTilberedning}`}</Text>
-            <Text>{`Merking og sporbarhet: ${tilsynDetails.merkingOgSporbarhet}`}</Text>
-            <Text>{`Rutiner og ledelse: ${tilsynDetails.rutinerOgLedelse}`}</Text>
+          <Box height="200px" alignContent="space-between">
+            <Table size="sm">
+              <Tbody>
+                <Tr>
+                  <Td>Lokaler og utstyr:</Td>
+                  <Td>
+                    {mapSmilefjesScoreToEmoji(tilsynDetails.lokalerOgUtstyr)}
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td>Mathåndtering og tilbredning:</Td>
+                  <Td>
+                    {mapSmilefjesScoreToEmoji(
+                      tilsynDetails.mathåndteringOgTilberedning
+                    )}
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td>Merking og sporbarhet:</Td>
+                  <Td>
+                    {mapSmilefjesScoreToEmoji(
+                      tilsynDetails.merkingOgSporbarhet
+                    )}
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td>Rutiner og ledelse:</Td>
+                  <Td>
+                    {mapSmilefjesScoreToEmoji(tilsynDetails.rutinerOgLedelse)}
+                  </Td>
+                </Tr>
+              </Tbody>
+            </Table>
           </Box>
 
-          <Box bg="gray.100" height="200px">
-            <Text>{`TilsynsId: ${tilsynDetails.tilsynsId}`}</Text>
-            <Text>{`TilsynshistorikkId: ${tilsynDetails.tilsynshistorikkId}`}</Text>
+          <Box height="200px">
+            <Stack marginBottom="10">
+              <Box>
+                <Text as="b">Tilsynsid:</Text>
+                <Tag>{tilsynDetails.tilsynsId}</Tag>
+              </Box>
+              <Box>
+                <Text as="b">Tilsynshistorikkid:</Text>
+                <Tag>{tilsynDetails.tilsynshistorikkId}</Tag>
+              </Box>
+            </Stack>
           </Box>
         </SimpleGrid>
       </>
