@@ -79,7 +79,6 @@ export const TilsynList = ({
               <Th isNumeric>Postnummer</Th>
               <Th>Dato</Th>
               <Th>Smilefjes</Th>
-              <Th>Tilsynsid</Th>
             </Tr>
           </Thead>
           <Tbody>
