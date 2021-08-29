@@ -57,9 +57,7 @@ Godt jobbet! Nå er du ferdig med del 1 og har lært deg å gjøre enkle kall ti
 
 # DEL 2
 
-I denne delen skal vi ta det et hakk videre. Nå skal vi se på hvordan vi kan konsumere data fra et eksisterende API inn vår egen frontend-applikasjon.
-
-##TODO Skrive noe om applikasjonen og hva den gjør.
+I denne delen skal vi ta det et hakk videre. Nå skal vi se på hvordan vi kan konsumere data fra et eksisterende API inn vår egen frontend-applikasjon. Vi skal jobbe med en nesten ferdig frontend applikasjon. Applikasjonen lar brukerne se data om mattilsynets tilsyn på spisesteder i Oslo, Bergen og Trondheim. Det som gjenstår på applikasjonen er å koble den opp API'et vi brukte i første oppgave.
 
 ## Oppsett
 
@@ -102,11 +100,10 @@ const url = "https://smilefjes.herokuapp.com/tilsyn";
 
 </details>
 
-Når du har fått løst oppgaven skal appen vise en liste med tilsyn. Dette er fint, men vi vil gjerne kun hente dataen vi faktisk har lyst på. Dette skal vi se videre på i oppgave 2.
+Når du har fått løst oppgaven skal appen vise en liste med tilsyn. Det betyr at vi har klart å koble sammen vår frontend-applikasjon med et eksternt API. Nå henter vi ut alle tilsyn. I neste oppgave skal vi se på hvordan vi kan hente ut kun de tilsynene vi er interessert i.
 
 <details><summary>🧠 Dypdykk</summary>
 Om du så litt etter la du merke til at vi brukte `fetch()` til å hente data. Om du har lyst til å lage flere webapplikasjoner som henter data fra web kommer du garantert til å ha nytte av å kunne mer om dette. MDN har en fin guide: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API.
-
 
 ```ts
 fetch("http://example.com/movies.json")
@@ -163,6 +160,8 @@ const url = `https://smilefjes.herokuapp.com/tilsyn?postnummer=${postnummer}&pos
 ```
 
 </details>
+
+Når du har fått løst oppgave 2 har vi laget muligheten til å hente ut en liste med tilsyn basert på de ulike parameterne vi sender inn. Du kan verifisere at du har fått til oppgaven ved å sette Trondheim som poststed og nøytral som smilefjes. Om du har fått løst oppgaven skal listen nå kun inneholde restauranter med nøytralt smilefjes.
 
 <details><summary>🧠 Dypdykk</summary>
 Du kan gjøre ganske mye kult med template literals. Ta en titt [her](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) for flere eksempler.
