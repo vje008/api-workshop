@@ -1,5 +1,14 @@
 import React from "react";
-import { Spinner, SimpleGrid, Box, Text, Button } from "@chakra-ui/react";
+import {
+  Spinner,
+  SimpleGrid,
+  Box,
+  Text,
+  Button,
+  Heading,
+  Center,
+  Stack,
+} from "@chakra-ui/react";
 import { TilsynDetailsType } from "./types";
 import { mapSmilefjesToEmoji } from "./utils";
 import { fetchTilsynDetails } from "./oppgave3";
@@ -32,39 +41,32 @@ export const TilsynDetails = (props: TilsynDetailsProps) => {
         >
           Gå tilbake
         </Button>
+        <Center h="100px">
+          <Stack marginBottom="10">
+            <Heading>{tilsynDetails.navn}</Heading>
+            <Text>
+              {`${tilsynDetails.adresse}, ${tilsynDetails.postnummer} ${tilsynDetails.poststed}`}
+            </Text>
+            <Text>Tilsyn gjennomført: {tilsynDetails.dato} </Text>
+          </Stack>
+        </Center>
         <SimpleGrid minChildWidth="260px" spacing="40px">
-          <Box bg="gray.100" height="200px">
-            <Text>{`Adresse: ${tilsynDetails.adresse}`}</Text>
-            <Text>{`Postnummer: ${tilsynDetails.postnummer}`}</Text>
-            <Text>{`Poststed: ${tilsynDetails.poststed}`}</Text>
-          </Box>
-          <Box bg="gray.100" height="200px">
-            <Text>{`Dato: ${tilsynDetails.dato}`}</Text>
-          </Box>
-          <Box bg="gray.100" height="200px">
-            <Text>{`Lokaler og utstyr: ${tilsynDetails.lokalerOgUtstyr}`}</Text>
-          </Box>
-          <Box bg="gray.100" height="200px">
-            <Text>{`Mathåndtering og tilbredning: ${tilsynDetails.mathåndteringOgTilberedning}`}</Text>
-          </Box>
-          <Box bg="gray.100" height="200px">
-            <Text>{`Merking og sporbarhet: ${tilsynDetails.merkingOgSporbarhet}`}</Text>
-          </Box>
-          <Box bg="gray.100" height="200px">
-            <Text>{`Navn: ${tilsynDetails.navn}`}</Text>
-          </Box>
-          <Box bg="gray.100" height="200px">
-            <Text>{`Rutiner og ledelse: ${tilsynDetails.rutinerOgLedelse}`}</Text>
-          </Box>
-          <Box bg="gray.100" height="200px">
-            <Text>{`Smilefjes: ${mapSmilefjesToEmoji(
+          <Box textAlign="center" height="200px">
+            <Text>Tilsynsresultat: </Text>
+            <Text fontSize="100">{`${mapSmilefjesToEmoji(
               tilsynDetails.smilefjes
             )}`}</Text>
           </Box>
+
+          <Box bg="gray.100" height="200px">
+            <Text>{`Lokaler og utstyr: ${tilsynDetails.lokalerOgUtstyr}`}</Text>
+            <Text>{`Mathåndtering og tilbredning: ${tilsynDetails.mathåndteringOgTilberedning}`}</Text>
+            <Text>{`Merking og sporbarhet: ${tilsynDetails.merkingOgSporbarhet}`}</Text>
+            <Text>{`Rutiner og ledelse: ${tilsynDetails.rutinerOgLedelse}`}</Text>
+          </Box>
+
           <Box bg="gray.100" height="200px">
             <Text>{`TilsynsId: ${tilsynDetails.tilsynsId}`}</Text>
-          </Box>
-          <Box bg="gray.100" height="200px">
             <Text>{`TilsynshistorikkId: ${tilsynDetails.tilsynshistorikkId}`}</Text>
           </Box>
         </SimpleGrid>
