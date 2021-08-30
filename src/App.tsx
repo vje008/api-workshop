@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ChakraProvider, Box, Grid, theme, Container } from "@chakra-ui/react";
+import { ChakraProvider, theme, Container } from "@chakra-ui/react";
 import { TilsynList } from "./TilsynList";
 import { InputFields } from "./InputFields";
 import { TilsynDetails } from "./TilsynDetails";
