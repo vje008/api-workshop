@@ -21,7 +21,7 @@ Dersom du ikke allerede har lastet ned Postman, gjør det nå. https://www.postm
 
 ### Oppgave 1
 
-Vi starter veldig enkelt og skal bare hente ut restaurantene i listen fra https://hotell.difi.no/?dataset=mattilsynet/smilefjes/tilsyn gjennom urlen https://hotell.difi.no/api/json/mattilsynet/smilefjes/tilsyn.
+Vi starter veldig enkelt og skal bare hente ut restaurantene i listen fra https://smilefjes.herokuapp.com/tilsyn.
 
 Ta en titt på all dataen du får ut. Denne skal vi i senere oppgaver vise i vår egen tjeneste 💥
 
@@ -29,7 +29,7 @@ Ta en titt på all dataen du får ut. Denne skal vi i senere oppgaver vise i vå
 Pass på at du gjør en GET-request og legg inn URLen under
 
 ```ts
-https://hotell.difi.no/api/json/mattilsynet/smilefjes/tilsyn
+https://smilefjes.herokuapp.com/tilsyn
 ```
 
 </details>
@@ -46,7 +46,7 @@ Vi må huske på å ha med `?` før våre parametere
 Bytt ut urlen i oppgave 1 med den under
 
 ```ts
-https://hotell.difi.no/api/json/mattilsynet/smilefjes/tilsyn?postnr=7030
+https://smilefjes.herokuapp.com/tilsyn?postnummer=7030
 ```
 
 </details>
@@ -299,8 +299,8 @@ Lag et nytt endepunkt i backend `/hei` som returnerer `"hei"`. Verifiser at det 
  
 Det finnes veldig mange forskjellige språk og teknologier man kan bruke for å lage en backend. I denne workshopen har vi brukt node express som rammeverk og javascript som programmeringsspråk. Du kan lese mer om node express [her](https://expressjs.com/en/starter/hello-world.html).
 
-I dette endepunktet returnerer vi en tekst, mens vanligvis for API som gir data som skal vises på en nettside blir dataformat [JSON](https://en.wikipedia.org/wiki/JSON) brukt. 
-  
+I dette endepunktet returnerer vi en tekst, mens vanligvis for API som gir data som skal vises på en nettside blir dataformat [JSON](https://en.wikipedia.org/wiki/JSON) brukt.
+
 </details>
 
 <details><summary>🚨 Løsningsforslag</summary>
@@ -326,8 +326,8 @@ Lag et endepunkt som gir tilbake et smilefjes :), / :|, :( basert på tilsyns-id
 Hvis du sitter fast kan det være en god idé å kopiere endepunktet til `tilsynsId` og endre det.
 
 Du finner tre statuskoder i `smilefjes`-feltet til et tilsyn: BLID, NØYTRAL og SUR
-</details>
 
+</details>
 
 <details><summary>🚨 Løsningsforslag</summary>
   
