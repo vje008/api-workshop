@@ -252,6 +252,10 @@ Verifisert at backend kjører ved å se at meldingen "Cannot GET /" dukker opp n
 
 I del 1 brukte vi Postman for å kjøre requests mot en tjeneste ute på internett. Nå skal vi bruke bruke postman for å hente data fra vår backend som kjører lokalt på maskinen. Bytt ut URL fra del 1 til å gå mot vår lokale backend.
 
+<details><summary>💡 Tips</summary>
+Husk at backend kjører på `http` og ikke `https`.
+</details>
+
 <details><summary>🚨 Løsningsforslag</summary>
 Sett endepunkt-URL i postman til å være `http://localhost:3003/tilsyn`
 
@@ -282,6 +286,8 @@ const url = `http://localhost:3003/tilsyn/${tilsynId}`;
 
 </details>
 
+For å teste at endringene fungerer må både opp både frontend og backend kjører. Etter vi har startet både frontend og backend kan vi gå til http://localhost:3000 for å sjekke at ting fungerer som før.
+
 ### Oppgave 3
 
 Lag et nytt endepunkt i backend `/hei` som returnerer `"hei"`. Verifiser at det fungerer med å bruke postman.
@@ -305,9 +311,16 @@ og test endepunktet med postman mot http://localhost:3003/hei og sjekk at repons
 
 </details>
 
-### Oppgave 4
+### Oppgave 4 (bonus)
 
-Lag et endepunkt som kun returnerer et smilefjes basert på tilsyns-id. /tilsyn/{tilsynsId}/fjes og test det med postman.
+Lag et endepunkt som gir tilbake et smilefjes :), / :|, :( basert på tilsyns-id `/tilsyn/{tilsynsId}/fjes`. Test det med postman.
+
+<details><summary>💡 Tips</summary>
+Hvis du sitter fast kan det være en god idé å kopiere endepunktet til `tilsynsId` og endre det.
+
+Du finner tre statuskoder i `smilefjes`-feltet til et tilsyn: BLID, NØYTRAL og SUR
+</details>
+
 
 <details><summary>🚨 Løsningsforslag</summary>
 I `app.js` filen legg til:
@@ -335,6 +348,6 @@ og test endepunktet med postman mot `http://localhost:3003/tilsyn/935d9947-2304-
 
 </details>
 
-### Oppgave 5 (bonus)
+### Oppgave 5 (bonus, avansert)
 
-Vis smilefjeset fra oppgave 4 i detaljsiden til et tilsyn.
+Vis smilefjeset fra oppgave 4 i detaljsiden til et tilsyn ved bruk av react.
