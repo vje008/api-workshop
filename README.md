@@ -5,7 +5,7 @@
 Du kommer til å se noen emojis i oppgavene. De betyr ca det her:
 
 - 🏆 Oppgave: Her er hva du skal gjøre
-- 💡 Tips: Litt ekstra info som kan være greit å være for å løse en oppgave
+- 💡 Tips: Litt ekstra info som kan være greit å lære for å løse en oppgave
 - 🚨 Løsningsforslag: Her finner du en komplett gjennomgang av hvordan du _kan_ løse oppgaven
 - 🧠 Dypdykk: Lenker og tips til hva man kan lese mer om for å få en dypere forståelse.
 
@@ -15,7 +15,7 @@ I denne delen skal vi lære oss å konstruere requester og bruke disse for å he
 
 ## Oppsett
 
-Dersom du ikke allerede har lastet ned Postman, gjør det nå. https://www.postman.com/downloads/. Det er alt du trenger til denne delen!
+Dersom du ikke allerede har lastet ned Postman, gjør det nå: https://www.postman.com/downloads/. Det er alt du trenger til denne delen!
 
 ## Oppgaver
 
@@ -43,7 +43,7 @@ Vi må huske på å ha med `?` før våre parametere
 </details>
 
 <details><summary>🚨 Løsningsforslag</summary>
-Bytt ut urlen i oppgave 1 med den under
+Bytt ut URLen i oppgave 1 med den under:
 
 ```ts
 https://smilefjes.herokuapp.com/tilsyn?postnummer=7030
@@ -238,7 +238,7 @@ På samme måte som i del 2 må vi laste ned, installere og kjøre opp backend. 
 
 Klon repoet og installer programvaren på [samme måte som i del 2](https://github.com/bekk/api-workshop#oppsett). Husk å bytt URL!
 
-Etter prosjektet er lastet ned naviger til backend-mappen og kjør npm install for å installere programvaren, og npm run dev for å starte backend.
+Etter at prosjektet er lastet ned, naviger til backend-mappen og kjør "npm install" for å installere programvaren, og "npm run dev" for å starte backend.
 
 ```bash
 npm install
