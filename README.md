@@ -253,11 +253,11 @@ Verifisert at backend kjører ved å se at meldingen "Cannot GET /" dukker opp n
 I del 1 brukte vi Postman for å kjøre requests mot en tjeneste ute på internett. Nå skal vi bruke bruke postman for å hente data fra vår backend som kjører lokalt på maskinen. Bytt ut URL fra del 1 til å gå mot vår lokale backend.
 
 <details><summary>💡 Tips</summary>
-Husk at backend kjører på `http` og ikke `https`.
+Husk at vår lokale backend kjører på http og ikke https.
 </details>
 
 <details><summary>🚨 Løsningsforslag</summary>
-Sett endepunkt-URL i postman til å være `http://localhost:3003/tilsyn`
+Sett endepunkt-URL i postman til å være: http://localhost:3003/tilsyn
 
 </details>
 
@@ -295,7 +295,11 @@ Lag et nytt endepunkt i backend `/hei` som returnerer `"hei"`. Verifiser at det 
 </details>
 
 <details><summary>🧠 Dypdykk</summary>
-...
+ 
+Det finnes veldig mange forskjellige språk og teknologier man kan bruke for å lage en backend. I denne workshopen har vi brukt node express som rammeverk og javascript som programmeringsspråk. Du kan lese mer om node express [her](https://expressjs.com/en/starter/hello-world.html).
+
+I dette endepunktet returnerer vi en tekst, mens vanligvis for API som gir data som skal vises på en nettside blir dataformat [JSON](https://en.wikipedia.org/wiki/JSON) brukt. 
+  
 </details>
 
 <details><summary>🚨 Løsningsforslag</summary>
@@ -307,7 +311,7 @@ app.get("/hei", (req, res) => {
 });
 ```
 
-og test endepunktet med postman mot http://localhost:3003/hei og sjekk at reponsen er "hei"
+og test endepunktet med postman mot http://localhost:3003/hei og sjekk at reponsen er "hei". Hvis ting fungerer som før har vi akkurat koblet sammen frontend og backend som begge kjører lokalt på maskinen!
 
 </details>
 
