@@ -266,6 +266,7 @@ Sett endepunkt-URL i postman til å være: http://localhost:3003/tilsyn
 Bytt ut endepunktene i frontend-løsningen til å gå mot den lokale backend-tjenesten.
 
 <details><summary>🚨 Løsningsforslag</summary>
+
 I filen `oppgave1.ts` i frontend-prosjektet sett url-variabelen til å være:
 
 ```ts
@@ -303,6 +304,7 @@ I dette endepunktet returnerer vi en tekst, mens vanligvis for API som gir data 
 </details>
 
 <details><summary>🚨 Løsningsforslag</summary>
+  
 I `app.js` filen legg til:
 
 ```js
@@ -320,6 +322,7 @@ og test endepunktet med postman mot http://localhost:3003/hei og sjekk at repons
 Lag et endepunkt som gir tilbake et smilefjes :), / :|, :( basert på tilsyns-id `/tilsyn/{tilsynsId}/fjes`. Test det med postman.
 
 <details><summary>💡 Tips</summary>
+  
 Hvis du sitter fast kan det være en god idé å kopiere endepunktet til `tilsynsId` og endre det.
 
 Du finner tre statuskoder i `smilefjes`-feltet til et tilsyn: BLID, NØYTRAL og SUR
@@ -327,6 +330,7 @@ Du finner tre statuskoder i `smilefjes`-feltet til et tilsyn: BLID, NØYTRAL og 
 
 
 <details><summary>🚨 Løsningsforslag</summary>
+  
 I `app.js` filen legg til:
 
 ```js
