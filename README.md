@@ -70,7 +70,7 @@ Når du har fått klonet repoet åpner du det i en egnet editor. Om du ikke har 
 Åpne en terminal og naviger til rotmappen av repoet. Her må du kjøre to kommandoer for å få applikasjonen til å starte.
 Først må vi laste ned alle pakker applikasjonen trenger for å starte. Dette gjøres ved å kjøre denne kommandoen:
 
-```bash
+```Shell
 npm install
 ```
 
