@@ -28,7 +28,7 @@ Ta en titt på all dataen du får ut. Denne skal vi i senere oppgaver vise i vå
 <details><summary>🚨 Løsningsforslag</summary>
 Pass på at du gjør en GET-request og legg inn URLen under
 
-```ts
+```
 https://smilefjes.herokuapp.com/tilsyn
 ```
 
