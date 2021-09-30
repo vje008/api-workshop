@@ -22,6 +22,7 @@ Dersom du ikke allerede har lastet ned Postman, gjør det nå: https://www.postm
 ### Oppgave 1
 
 Vi starter veldig enkelt og skal bare hente ut restaurantene i listen fra https://smilefjes.herokuapp.com/tilsyn.
+Dokumentasjonen på dette finner du på https://smilefjes.herokuapp.com/api-docs/.
 
 Ta en titt på all dataen du får ut. Denne skal vi i senere oppgaver vise i vår egen tjeneste 💥
 
