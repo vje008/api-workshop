@@ -356,7 +356,3 @@ app.get("/tilsyn/:tilsynsId/fjes", (req, res) => {
 og test endepunktet med postman mot `http://localhost:3003/tilsyn/935d9947-2304-4e72-a57c-7f9f03081a1d/fjes`
 
 </details>
-
-### Oppgave 5 (bonus, avansert)
-
-Vis smilefjeset fra oppgave 4 i detaljsiden til et tilsyn ved bruk av react.
