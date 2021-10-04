@@ -356,3 +356,10 @@ app.get("/tilsyn/:tilsynsId/fjes", (req, res) => {
 og test endepunktet med postman mot `http://localhost:3003/tilsyn/935d9947-2304-4e72-a57c-7f9f03081a1d/fjes`
 
 </details>
+
+### Oppgave 5 (bonus)
+
+En restaurant kan ha hatt flere tilsyn. Lag et endepunkt som returnerer en liste med alle tilsyn for en restaurant.
+Dette endepunktet kan for eksempel ta inn navnet på restaurant.
+
+</details>
