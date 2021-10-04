@@ -58,7 +58,7 @@ Godt jobbet! Nå er du ferdig med del 1 og har lært deg å gjøre enkle kall ti
 
 # DEL 2
 
-I denne delen skal vi ta det et hakk videre. Nå skal vi se på hvordan vi kan konsumere data fra et eksisterende API inn vår egen frontend-applikasjon. Vi skal jobbe med en nesten ferdig frontend applikasjon. Applikasjonen lar brukerne se data om mattilsynets tilsyn på spisesteder i Oslo, Bergen og Trondheim. Det som gjenstår på applikasjonen er å koble den opp API'et vi brukte i første oppgave.
+I denne delen skal vi ta det et hakk videre. Nå skal vi se på hvordan vi kan konsumere data fra et eksisterende API inn vår egen frontend-applikasjon. Vi skal jobbe med en nesten ferdig frontend applikasjon. Applikasjonen lar brukerne se data om mattilsynets tilsyn på spisesteder i Oslo, Bergen og Trondheim. Det som gjenstår på applikasjonen er å koble den opp mot API'et vi brukte i første oppgave.
 
 ## Oppsett
 
@@ -170,7 +170,7 @@ Du kan gjøre ganske mye kult med template literals. Ta en titt [her](https://de
 
 ### Oppgave 3
 
-Nå har vi gjort applikasjonen i stand til ikke bare hente tilsyn, men også hente de tilsynene vi har lyst på basert på query-parameterne vi sender inn. Nå skal vi se på hvordan vi kan gå frem for å hente ut detaljer om et tilsyn. Finn filen `oppgave3.ts` for å løse dette.
+Nå har vi gjort applikasjonen i stand til ikke bare å hente tilsyn, men også hente de tilsynene vi har lyst på basert på query-parameterne vi sender inn. Nå skal vi se på hvordan vi kan gå frem for å hente ut detaljer om et tilsyn. Finn filen `oppgave3.ts` for å løse dette.
 
 <details><summary>💡 Tips</summary>
 For å løse oppgaven må du ta i bruke et stiparameter (path-params). Stiparametre brukes ofte ved at man sender inn id'en til ressursen man har lyst til å hente. Sti parametre legges til på slutten av stien på følgende format: `/stiParameter`.
@@ -194,7 +194,7 @@ const url = `https://smilefjes.herokuapp.com/tilsyn/${tilsynId}`;
 
 ### Oppgave 4
 
-Nå har vi gjort applikasjonen i stand til å en liste med tilsyn, samt vise detaljer om et enkelt tilsyn. Problemet er at vi enda ikke får hentet ut de tilsynene som har resultert i et surt smilefjes. Om vi prøver å hente disse får vi bare en tom liste tilbake. Dette skal vi løse ved å bruke header-parametre. Finn filen `oppgave4.ts` og fortsett der.
+Nå har vi gjort applikasjonen i stand til å hente en liste med tilsyn, samt vise detaljer om et enkelt tilsyn. Problemet er at vi enda ikke får hentet ut de tilsynene som har resultert i et surt smilefjes. Om vi prøver å hente disse får vi bare en tom liste tilbake. Dette skal vi løse ved å bruke header-parametre. Finn filen `oppgave4.ts` og fortsett der.
 
 <details><summary>💡 Tips</summary>
 For å løse oppgaven må du ta i bruke et header-paramtre og sende inn det superduperhemmeligepassordet der. MDN har en fin beskrivelse av hva HTTP-headeren er for noe her: https://developer.mozilla.org/en-US/docs/Glossary/Request_header.
@@ -288,7 +288,7 @@ const url = `http://localhost:3003/tilsyn/${tilsynId}`;
 
 </details>
 
-For å teste at endringene fungerer må både opp både frontend og backend kjører. Etter vi har startet både frontend og backend kan vi gå til http://localhost:3000 for å sjekke at ting fungerer som før.
+For å teste at endringene fungerer må både frontenden og backenden kjøre. Etter vi har startet både frontend og backend kan vi gå til http://localhost:3000 for å sjekke at ting fungerer som før.
 
 ### Oppgave 3
 
