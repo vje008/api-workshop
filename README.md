@@ -340,7 +340,7 @@ app.get("/tilsyn/:tilsynsId/fjes", (req, res) => {
     return tilsyn.tilsynsId.toString() == req.params.tilsynsId;
   });
 
-  var fjes;
+  let fjes;
   if (tilsyn.smilefjes === "BLID") {
     fjes = ":)";
   } else if (tilsyn.smilefjes === "NØYTRAL") {
