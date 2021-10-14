@@ -367,7 +367,7 @@ app.get("/tilsyn/:tilsynsId/fjes", (req, res) => {
     return tilsyn.tilsynsId.toString() == req.params.tilsynsId;
   });
 
-  var fjes;
+  let fjes;
   if (tilsyn.smilefjes === "BLID") {
     fjes = ":)";
   } else if (tilsyn.smilefjes === "NØYTRAL") {
@@ -387,6 +387,30 @@ og test endepunktet med postman mot `http://localhost:3003/tilsyn/935d9947-2304-
 ### Oppgave 5 (bonus)
 
 En restaurant kan ha hatt flere tilsyn. Lag et endepunkt som returnerer en liste med alle tilsyn for en restaurant.
-Dette endepunktet kan for eksempel ta inn navnet på restaurant.
+Dette endepunktet kan for eksempel ta inn navnet på restaurant. For å teste om løsningen fungerer kan man bruke bedriftsnavnet `Savanna` eller `Nam Nam`, begge har flere tilsyn. 
+
+
+<details><summary>💡 Tips</summary>
+  
+  
+Her kan det også være greit å ta utagangspunktet i endepunktet til `tilsynsId`. 
+
+I endepunktet til tilsyn er vi kun interessert i å finne ett resultat, og vi bruker derfor `find`, en annen funksjon som kan brukes til å finne alle resultatene fra en liste er `filter`. Sjekk [filter dokumentasjonen](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) for eksempler på bruk.
+
+</details>
+
+<details><summary>🚨 Løsningsforslag</summary>
+  
+I `app.js` filen legg til det under, og test at det fungerer med å sjekke http://localhost:3003/tilsyn/resturant/Savanna
+
+```js
+app.get("/tilsyn/resturant/:navn", (req, res) => {
+  const alleTilsyn = tilsynsListe.filter((tilsyn) => {
+        return tilsyn.navn === req.params.navn;
+  });
+
+  res.send(alleTilsyn);
+});
+```
 
 </details>
