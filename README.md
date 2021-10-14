@@ -90,6 +90,10 @@ Oppgaveteksten til hver oppgave finner du i oppgavefilene. Vi skal bruke API'et 
 
 ### Oppgave 1
 
+Her skal vi få applikasjonen til å hente og vise frem en liste med tilsyn. I del 1 av workshoppen brukte du postman til å hente ut en hel liste med tilsyn. Finn frem URL'en du brukte for å hente listen og bytt ut innholdet i url-variablen.
+
+Om du finner riktig url kommer applikasjonen til å vise frem en liste med tilbud når du trykker på knappen "Hent tilsyn"
+
 Finn filen `oppgave1.ts`. Her skal vi gjøre applikasjonen i stand til å hente en liste med tilsyn.
 
 <details><summary>🚨 Løsningsforslag</summary>
@@ -115,6 +119,19 @@ fetch("http://example.com/movies.json")
 </details>
 
 ### Oppgave 2
+
+Her skal vi få applikasjonen til å hente ut et subsett av alle tilsyn basert på hvilke parametre vi legger ved i spørringen. Det ble nevnt query-parametre i et av foredragene. Nå skal vi benytte oss av disse.
+
+Start med å endre verdien av variablen `shouldUseInputFields` fra false til true. Sjekk forsiden av appen. Endret denne seg nå?
+
+Det skal ha dukket opp noen nye inputfelter, men det som også dessverre har skjedd er at "Hent tilsyn" ikke lenger fungerer.
+Det skal vi nå fikse, og på en bedre måte enn det vi gjorde i oppgave 1.
+
+Vi skal nå konstruere en ny url som også tar i bruke queryparams. URL'en vi trenger for å løse oppgave 2 blir på følgende format:
+
+> 'URL FRA OPPGAVE 1' + 'QUERYPARAMETRE'
+
+Om du står fast kan du sjekke "💡Tips"
 
 Finn filen `oppgave2.ts`. Her skal vi gjøre applikasjonen i stand til å hente ut kun de tilsynene vi har lyst på ved å bruke query-parametere, også kjent som query params.
 
@@ -170,7 +187,11 @@ Du kan gjøre ganske mye kult med template literals. Ta en titt [her](https://de
 
 ### Oppgave 3
 
-Nå har vi gjort applikasjonen i stand til ikke bare å hente tilsyn, men også hente de tilsynene vi har lyst på basert på query-parameterne vi sender inn. Nå skal vi se på hvordan vi kan gå frem for å hente ut detaljer om et tilsyn. Finn filen `oppgave3.ts` for å løse dette.
+Nå har vi gjort applikasjonen i stand til ikke bare å hente tilsyn, men også hente de tilsynene vi har lyst på basert på query-parameterne vi sender inn. Nå skal vi se på hvordan vi kan gå frem for å hente ut detaljer om et tilsyn.
+
+Start med å endre verdien av variablen `enableDetailsLink` fra false til true. Nå skal det dukke opp en knapp med "Se detaljer" på hvert tilsyn i listen. Denne knappen tar deg videre til en detaljeside for hvert tilsyn.
+
+Du skal nå bytte url slik at applikasjonen er i stand til å hente data for å fylle ut data om den nye siden. Om du står fast kan du sjekke "💡Tips"
 
 <details><summary>💡 Tips</summary>
 For å løse oppgaven må du ta i bruke et stiparameter (path-params). Stiparametre brukes ofte ved at man sender inn id'en til ressursen man har lyst til å hente. Sti parametre legges til på slutten av stien på følgende format: `/stiParameter`.
@@ -194,7 +215,13 @@ const url = `https://smilefjes.herokuapp.com/tilsyn/${tilsynId}`;
 
 ### Oppgave 4
 
-Nå har vi gjort applikasjonen i stand til å hente en liste med tilsyn, samt vise detaljer om et enkelt tilsyn. Problemet er at vi enda ikke får hentet ut de tilsynene som har resultert i et surt smilefjes. Om vi prøver å hente disse får vi bare en tom liste tilbake. Dette skal vi løse ved å bruke header-parametre. Finn filen `oppgave4.ts` og fortsett der.
+Nå har vi gjort applikasjonen i stand til å hente en liste med tilsyn, samt vise detaljer om et enkelt tilsyn. Problemet er at vi enda ikke får hentet ut de tilsynene som har resultert i et surt smilefjes. Om vi prøver å hente disse får vi bare en tom liste tilbake. Dette skal vi løse ved å bruke header-parametre.
+
+Start med å endre verdien av variablen `shouldUseAccessToken` fra false til true
+
+Vi skal bruke nøyaktig samme url som i oppgave 2, men også legge til det nye parameteret i headeren.
+
+Om du står fast kan du sjekke "💡Tips"
 
 <details><summary>💡 Tips</summary>
 For å løse oppgaven må du ta i bruke et header-paramtre og sende inn det superduperhemmeligepassordet der. MDN har en fin beskrivelse av hva HTTP-headeren er for noe her: https://developer.mozilla.org/en-US/docs/Glossary/Request_header.
