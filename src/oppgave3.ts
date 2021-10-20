@@ -1,7 +1,7 @@
-export const enableDetailsLink = false;
+export const enableDetailsLink = true;
 
 export function fetchTilsynDetails(tilsynId: string): Promise<Response> {
-  const url = "BYTT UT DENNE";
+  const url = "https://smilefjes.herokuapp.com/tilsyn/" + tilsynId; 
 
   return fetch(url);
 }
