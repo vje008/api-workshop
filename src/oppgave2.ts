@@ -1,6 +1,6 @@
 import { QueryParams } from "./types";
 
-export const shouldUseInputFields = false;
+export const shouldUseInputFields = true;
 
 export function fetchTilsynListWithQueryParams(
   queryParams?: QueryParams
@@ -8,8 +8,10 @@ export function fetchTilsynListWithQueryParams(
   const postnummer = queryParams?.postnummer;
   const poststed = queryParams?.poststed;
   const smilefjes = queryParams?.smilefjes;
+  //?postnummer=7030&smilefjes=blid&
 
-  const url = "HELE DENNE TEKSTEN SKAL BYTTES UT";
+  const url = `https://smilefjes.herokuapp.com/tilsyn?poststed=${poststed}&postnummer=${postnummer}` +
+  `&smilefjes=${smilefjes}`;
 
   return fetch(url);
 }
