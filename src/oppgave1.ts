@@ -1,5 +1,5 @@
 export function fetchTilsynList(): Promise<Response> {
-  const url = "https://smilefjes.herokuapp.com/tilsyn";
+  const url = "http://localhost:3000/tilsyn";
 
   return fetch(url);
 }

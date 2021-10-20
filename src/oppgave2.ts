@@ -10,7 +10,7 @@ export function fetchTilsynListWithQueryParams(
   const smilefjes = queryParams?.smilefjes;
   //?postnummer=7030&smilefjes=blid&
 
-  const url = `https://smilefjes.herokuapp.com/tilsyn?poststed=${poststed}&postnummer=${postnummer}` +
+  const url = `http://localhost:3000/tilsyn?poststed=${poststed}&postnummer=${postnummer}` +
   `&smilefjes=${smilefjes}`;
 
   return fetch(url);
