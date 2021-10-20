@@ -1,6 +1,6 @@
 import { QueryParams } from "./types";
 
-export const shouldUseAccessToken = false;
+export const shouldUseAccessToken = true;
 
 export function fetchTilsynListWitHeaderParam(
   queryParams?: QueryParams
@@ -9,11 +9,12 @@ export function fetchTilsynListWitHeaderParam(
   const poststed = queryParams?.poststed;
   const smilefjes = queryParams?.smilefjes;
 
-  const url = `BYTT UT DENNE MED SVARET FRA OPPGAVE 2`;
+  const url = `https://smilefjes.herokuapp.com/tilsyn?poststed=${poststed}&postnummer=${postnummer}` +
+  `&smilefjes=${smilefjes}`;
 
   return fetch(url, {
     headers: {
-      // Her må vi legge til et parameter
+      accessToken: "superduperhemmeligpassord",
     },
   });
 }
