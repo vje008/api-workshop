@@ -1,5 +1,5 @@
 export function fetchTilsynList(): Promise<Response> {
-  const url = "HELE DENNE TEKSTEN SKAL BYTTES UT";
+  const url = "https://smilefjes.herokuapp.com/tilsyn";
 
   return fetch(url);
 }
