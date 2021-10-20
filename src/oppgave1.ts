@@ -1,5 +1,5 @@
 export function fetchTilsynList(): Promise<Response> {
-  const url = "http://localhost:3000/tilsyn";
+  const url = "http://localhost:3003/tilsyn";
 
   return fetch(url);
 }

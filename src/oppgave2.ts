@@ -10,7 +10,7 @@ export function fetchTilsynListWithQueryParams(
   const smilefjes = queryParams?.smilefjes;
   //?postnummer=7030&smilefjes=blid&
 
-  const url = `http://localhost:3000/tilsyn?poststed=${poststed}&postnummer=${postnummer}` +
+  const url = `http://localhost:3003/tilsyn?poststed=${poststed}&postnummer=${postnummer}` +
   `&smilefjes=${smilefjes}`;
 
   return fetch(url);
